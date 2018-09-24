@@ -24,10 +24,12 @@ def start() {
           sh "curl https://raw.githubusercontent.com/elgendyLanes/BuildReports/master/build-report.sh -o build-report.sh"
           sh "sh build-report.sh"
 
-          $subject = 'Build report for: Elgendy'
-          $body = readFile 'report/build-report.html'
-          $to = ('mohamed.elgendy@blacklane.com')
-          emailext attachLog: false, body: $body, subject: $subject, to: $to, mimeType: 'text/html'
+          emailext
+          body: 'A Test EMail',
+          recipientProviders: [[$class: 'DevelopersRecipientProvider'],[$class: 'RequesterRecipientProvider']],
+          subject: 'Test',
+          to: 'mohamed.elgendy@blacklane.com'
+
         }
 
   }
