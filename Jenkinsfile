@@ -1,6 +1,7 @@
 start()
 
 def start() {
+  node('myNode') {
     stage ('Clean & Git checkout') {
       echo 'Clean & Git checkout Stage Started'
 
@@ -15,4 +16,6 @@ def start() {
 
       sh "./gradlew sdk:test app:testDebugUnitTest"
     }
+
+  }
 }
