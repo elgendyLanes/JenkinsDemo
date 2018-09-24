@@ -22,6 +22,7 @@ def start() {
 
 
           sh "curl https://raw.githubusercontent.com/elgendyLanes/BuildReports/master/build-report.sh -o build-report.sh"
+          sh ('build-report.sh')
 
           $subject = 'Build report for: Elgendy'
           $body = readFile 'report/build-report.html'
