@@ -14,7 +14,7 @@ def start() {
     stage ('Run unit tests') {
       echo 'Run unit tests Stage Started'
 
-      sh "./gradlew sdk:test app:testDebugUnitTest"
+      sh "./gradlew app:testDebugUnitTest"
     }
 
   }
