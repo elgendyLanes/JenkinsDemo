@@ -13,6 +13,7 @@ def start() {
       echo 'Run unit tests Stage Started'
 
       sh "./gradlew app:testDebugUnitTest"
+      sh "./gradlew app:jacocoTestReport"
     }
 
   }
