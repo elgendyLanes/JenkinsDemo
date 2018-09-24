@@ -1,7 +1,7 @@
 start()
 
 def start() {
-  node('myNode') {
+  node {
     stage ('Clean & Git checkout') {
       echo 'Clean & Git checkout Stage Started'
 
