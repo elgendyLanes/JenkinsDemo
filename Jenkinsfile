@@ -24,12 +24,7 @@ def start() {
           sh "curl https://raw.githubusercontent.com/elgendyLanes/BuildReports/master/build-report.sh -o build-report.sh"
           sh "sh build-report.sh"
 
-          emailext
-          body: 'A Test EMail',
-          recipientProviders: [[$class: 'DevelopersRecipientProvider'],[$class: 'RequesterRecipientProvider']],
-          subject: 'Test',
-          to: 'mohamed.elgendy@blacklane.com'
-
+          emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'],[$class: 'RequesterRecipientProvider']], subject: 'Test', to: 'mohamed.elgendy@blacklane.com'
         }
 
   }
