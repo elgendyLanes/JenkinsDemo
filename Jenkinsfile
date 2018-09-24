@@ -7,8 +7,6 @@ def start() {
 
       deleteDir()
       checkout(scm)
-      sh 'git --no-pager log -1 --pretty=format:%ae HEAD > .committer'
-      stash includes: '.committer', name: 'committer' // save committer in case we need to email a failure notice
     }
 
     stage ('Run unit tests') {
