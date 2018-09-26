@@ -26,7 +26,7 @@ def start() {
 
           $subject = 'Build report'
           $body = readFile 'report/build-report.html'
-          $to = ('mohamed.elgendy@blacklane.com', 'doha_fci09@yahoo.com')
+          $to = ('doha_fci09@yahoo.com')
           emailext attachLog: false, body: $body, subject: $subject, to: $to, mimeType: 'text/html'
         }
 
